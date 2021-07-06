@@ -83,7 +83,7 @@
 
 
 
-    <ul class="order-menu main-bg d-flex justify-content-around nav nav-pills mx-auto" id="pills-tab" role="tablist">
+      <ul class="order-menu main-bg d-flex justify-content-around nav nav-pills mx-auto" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
           <a class="nav-link active p-4" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">طلبات حالية</a>
         </li>
@@ -91,6 +91,13 @@
           <a class="nav-link p-4" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">طلبات سابقة</a>
         </li>
       </ul>
+      <div class="container">
+        <div class="row">
+          <div class="rejected-orders">
+            <h5>الطلبات المرفوضة : <span id="rejected-orders"></span></h5>
+          </div>
+        </div>
+      </div>
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
             <div class="container">
@@ -107,9 +114,51 @@
                                 <p>المجموع :  75 ريال</p>
                             </div>
                             <div class="recent-order-options d-flex flex-column col-md-3 col-sm-12">
-                                <button class="receive mb-4">استلام</button>
-                                <button class="refuse">رفض</button>
+                                <button class="receive mb-4" data-toggle="modal" data-target="#receive">استلام</button>
+                                <button class="refuse" data-toggle="modal" data-target="#refuse">رفض</button>
+                                <!-- Button trigger modal -->
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="refuse" tabindex="-1" aria-labelledby="refuseLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="refuseLabel">تأكيد</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        هل بالفعل تريد رفض الطلب
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary accept">Save changes</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="modal fade" id="receive" tabindex="-1" aria-labelledby="receiveLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="receiveLabel">تأكيد</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        هل بالفعل تريد استلام الطلب
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary accept">Save changes</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                             </div>
+                            
                         </div>
                         
                 
@@ -126,8 +175,8 @@
                                 <p>المجموع :  75 ريال</p>
                             </div>
                             <div class="recent-order-options d-flex flex-column col-md-3 col-sm-12">
-                                <button class="receive mb-4">استلام</button>
-                                <button class="refuse">رفض</button>
+                                <button class="receive mb-4" data-toggle="modal" data-target="#receive">استلام</button>
+                                <button class="refuse" data-toggle="modal" data-target="#refuse">رفض</button>
                             </div>
                         </div>
                         
@@ -145,8 +194,8 @@
                                     <p>المجموع :  75 ريال</p>
                                 </div>
                                 <div class="recent-order-options d-flex flex-column col-md-3 col-sm-12">
-                                    <button class="receive mb-4">استلام</button>
-                                    <button class="refuse">رفض</button>
+                                    <button class="receive mb-4" data-toggle="modal" data-target="#receive">استلام</button>
+                                    <button class="refuse" data-toggle="modal" data-target="#refuse">رفض</button>
                                 </div>
                             </div>
                             

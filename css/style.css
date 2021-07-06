@@ -503,3 +503,15 @@ footer{
     margin-top: 50px;
     cursor: pointer;
 }
+
+@media (max-width : 400px){
+    .header-content h1{
+        font-size: 100px;
+    }
+    .header-content a{
+        padding: 10px 20px 20px;
+    }
+}
+.hide_modal .modal-backdrop{
+    display: none;
+}
